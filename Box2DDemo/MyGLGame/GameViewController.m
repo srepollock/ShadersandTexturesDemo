@@ -172,8 +172,8 @@ GLint uniforms[NUM_UNIFORMS];
     
     // Generate vertices
     int numVerts;
-    numIndices = generateSphere(50, 1, &vertices, &normals, &texCoords, &indices, &numVerts);
-    //    numIndices = generateCube(1.5, &vertices, &normals, &texCoords, &indices, &numVerts);
+//    numIndices = generateSphere(50, 1, &vertices, &normals, &texCoords, &indices, &numVerts);
+    numIndices = generateCube(1.5, &vertices, &normals, &texCoords, &indices, &numVerts);
     
     // Set up GL buffers
     glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffers[0]);
@@ -335,6 +335,8 @@ GLint uniforms[NUM_UNIFORMS];
     glBindAttribLocation(_program, GLKVertexAttribPosition, "position");
     glBindAttribLocation(_program, GLKVertexAttribNormal, "normal");
     glBindAttribLocation(_program, GLKVertexAttribTexCoord0, "texCoordIn");
+#pragma mark - Flashlight
+//    glBindAttribLocation(_program, GLKVertexAttribPosition, "flashlightPosition");
     
     // Link program.
     if (![self linkProgram:_program]) {
